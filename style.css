@@ -1,0 +1,54 @@
+/* ==========================================================================
+   PORTFOLIO STYLING - style.css
+   ========================================================================== */
+
+/* 1. TYPE SELECTOR 
+   Applies to the entire page to change fonts and default background output */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #1e293b; /* Primary dark text color */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. ID SELECTOR 
+   Targets a unique header element (e.g., your name or portfolio title) */
+#main-title {
+    color: #0f172a; /* Deep midnight blue */
+    text-align: center;
+    font-size: 2.5rem;
+    
+    /* BOX MODEL DEMONSTRATION 1 (Header element) */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 4px solid #d97706; /* Warm Amber complementary border */
+}
+
+/* 3. CLASS SELECTOR 
+   A reusable container layout for content sections on index, about, or projects pages */
+.project-card {
+    background-color: #ffffff;
+    max-width: 600px;
+    
+    /* BOX MODEL DEMONSTRATION 2 & 3 (Card container layout) */
+    margin: 30px auto;          /* Top/Bottom spacing; Auto centers the box horizontally */
+    padding: 24px;              /* Internal spacing holding text away from borders */
+    border: 1px solid #e2e8f0;   /* Clean light gray border box */
+    
+    /* Intentional styling additions */
+    border-left: 5px solid #d97706; /* Secondary Complementary Amber accent line */
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Reusable styles for images inside your portfolio cards */
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
