@@ -16,7 +16,7 @@ body {
 /* 2. ID SELECTOR 
    Targets a unique header element (e.g., your name or portfolio title) */
 #main-title {
-    color: #0f172a; /* Deep midnight blue */
+    color: #008080; /* Deep midnight blue */
     text-align: center;
     font-size: 2.5rem;
     
@@ -50,4 +50,7 @@ body {
     height: auto;
     border-radius: 4px;
     margin-top: 15px;
+}
+a {   
+   Color: red;
 }
