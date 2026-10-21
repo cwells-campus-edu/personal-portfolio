@@ -7,7 +7,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #11f06a;
-    color: #ffffff; /* Primary dark text color */
+    color: #1e293b; /* Primary dark text color */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body {
 /* 2. ID SELECTOR 
    Targets a unique header element (e.g., your name or portfolio title) */
 #main-title {
-    color: #008080; /* Deep midnight blue */
+    color: #0f172a; /* Deep midnight blue */
     text-align: center;
     font-size: 2.5rem;
     
@@ -30,7 +30,7 @@ body {
 /* 3. CLASS SELECTOR 
    A reusable container layout for content sections on index, about, or projects pages */
 .project-card {
-    background-color: #008080;
+    background-color: #ffffff;
     max-width: 600px;
     
     /* BOX MODEL DEMONSTRATION 2 & 3 (Card container layout) */
