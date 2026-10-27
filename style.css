@@ -50,6 +50,7 @@ body {
     height: auto;
     border-radius: 4px;
     margin-top: 15px;
+    padding: 5px;   /* Adds the missing 
 }
 li a {   
    Color: red !important;
