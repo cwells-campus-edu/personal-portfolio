@@ -54,3 +54,43 @@ body {
 li a {   
    Color: red !important;
 }
+
+/* ==========================================================================
+   Homework 2: Responsive Multi-Column Layout Section
+   ========================================================================== */
+
+/* 1. Mobile Viewport (Base Style - Targets 320px and up) */
+.layout-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box; /* Crucial: Prevents any horizontal scrolling */
+}
+
+.card {
+  background-color: #ffffff; /* Clean white card background to match your design */
+  border: 1px solid #e2e8f0; /* Soft light gray border line */
+  border-radius: 8px;
+  padding: 20px;
+  color: #1e293b; /* Dark text color for readability inside white cards */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Matches your styling aesthetic */
+}
+
+/* 2. Tablet Viewport (Triggers at 768px and up) */
+@media (min-width: 768px) {
+  .layout-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 30px;
+  }
+}
+
+/* 3. Desktop Viewport (Triggers at 1200px and up) */
+@media (min-width: 1200px) {
+  .layout-container {
+    max-width: 1100px;
+    margin: 0 auto; /* Horizontally centers your columns container */
+  }
+}
