@@ -77,6 +77,14 @@ li a {
   color: #1e293b; /* Dark text color for readability inside white cards */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Matches your styling aesthetic */
 }
+/* 2. Mobile Viewport (Triggers at 768px and up) */
+@media (min-width: 320px) {
+  .layout-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 30px;
+  }
+}
 
 /* 2. Tablet Viewport (Triggers at 768px and up) */
 @media (min-width: 768px) {
