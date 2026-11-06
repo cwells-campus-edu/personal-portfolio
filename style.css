@@ -69,7 +69,7 @@ li a {
   box-sizing: border-box; /* Crucial: Prevents any horizontal scrolling */
 }
 img {
-   max width: 100px;
+   max-width: 100px;
    height: auto;
 }
 .card {
