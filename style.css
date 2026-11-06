@@ -68,7 +68,10 @@ li a {
   width: 100%;
   box-sizing: border-box; /* Crucial: Prevents any horizontal scrolling */
 }
-
+img {
+   max width: 100px;
+   height: auto;
+}
 .card {
   background-color: #ffffff; /* Clean white card background to match your design */
   border: 1px solid #e2e8f0; /* Soft light gray border line */
