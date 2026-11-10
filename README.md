@@ -1,9 +1,8 @@
 # Project Milestone 3: Accessible & Designed
 
 ## Accessibility Fixes
-* Added missing alt text to all portfolio image tags to ensure screen readers can describe the visuals accurately.
-* Increased the text contrast ratio on header elements to meet WCAG AA standards.
-* Linked all contact form input fields with explicit label elements using corresponding ID attributes.
+* Darkened header navigation link text color in styles.css to increase contrast ratio and meet WCAG AA standards.
+* Verified page markup and alternative text across all pages using the WAVE accessibility evaluation tool.
 
 ## Visual Design Principles
 * **Proximity:** Grouped related project title, image, and description elements together inside single card containers using CSS padding and margins.
