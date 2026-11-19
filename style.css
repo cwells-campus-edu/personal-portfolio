@@ -1,35 +1,38 @@
+css
 /* ==========================================================================
    PORTFOLIO STYLING - style.css
    ========================================================================== */
 
-/* 1. TYPE SELECTOR
-   Applies to the entire page to change fonts and default background output */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #11f06a;
-  color: #1e293b; /* Primary dark text color */
+  color: #1e293b; /* 9.54:1 contrast on #11f06a */
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
-/* BOX MODEL DEMONSTRATION 1 (Header element) */
 header {
   margin-top: 40px;
   margin-bottom: 20px;
   padding: 15px;
-  border-bottom: 4px solid #d97706; /* Warm Amber complementary border */
+  border-bottom: 4px solid #92400e; /* Deep Amber: 4.52:1 on #11f06a */
 }
 
-/* 2. ID SELECTOR
-   Targets a unique header element (e.g., your name or portfolio title) */
 #main-title {
-  color: #0f172a; /* Deep midnight blue */
+  color: #0f172a; /* Midnight Blue: 11.64:1 on #11f06a */
   text-align: center;
   font-size: 2.5rem;
 }
 
-/* High-contrast navigation links (WCAG AA compliant against #11f06a) */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+}
+
 nav a,
 li a {
   color: #0f172a;
@@ -43,22 +46,17 @@ nav a:focus {
   outline: 2px solid #0f172a;
 }
 
-/* 3. CLASS SELECTOR
-   A reusable container layout for content sections on index, about, or projects pages */
 .project-card {
   background-color: #ffffff;
   max-width: 600px;
-  /* BOX MODEL DEMONSTRATION 2 & 3 (Card container layout) */
-  margin: 30px auto;          /* Top/Bottom spacing; Auto centers the box horizontally */
-  padding: 24px;              /* Internal spacing holding text away from borders */
-  border: 1px solid #e2e8f0;   /* Clean light gray border box */
-  /* Intentional styling additions */
-  border-left: 5px solid #d97706; /* Secondary Complementary Amber accent line */
+  margin: 30px auto;
+  padding: 24px;
+  border: 1px solid #64748b; /* Slate Gray: 4.76:1 on white */
+  border-left: 5px solid #92400e; /* Deep Amber: 6.93:1 on white */
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Reusable styles for images inside your portfolio cards */
 .project-card img {
   max-width: 100%;
   height: auto;
@@ -67,6 +65,19 @@ nav a:focus {
 }
 
 /* Contact Form & Accessible Error Styling */
+fieldset {
+  border: 2px solid #1e293b;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #0f172a;
+  padding: 0 8px;
+}
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -75,6 +86,7 @@ nav a:focus {
   display: block;
   font-weight: bold;
   margin-bottom: 4px;
+  color: #0f172a;
 }
 
 .form-group input,
@@ -86,28 +98,52 @@ nav a:focus {
   border: 1px solid #1e293b;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border: 2px solid #8b0000;
 }
 
 .error-message {
-  color: #8b0000; /* High-contrast dark red (passes WCAG AA on green & white) */
+  color: #8b0000; /* Dark Red: 10.01:1 on white */
   font-weight: bold;
   font-size: 0.9rem;
   display: block;
   margin-top: 4px;
 }
 
-/* ==========================================================================
-   Homework 2: Responsive Multi-Column Layout Section
-   ========================================================================== */
+button,
+input[type="submit"] {
+  background-color: #0f172a;
+  color: #ffffff; /* 17.85:1 contrast ratio */
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-/* 1. Mobile Viewport (Base Style - Targets 320px and up) */
+button:hover,
+button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #92400e;
+  outline: 2px solid #0f172a;
+}
+
+/* Responsive Multi-Column Grid */
 .layout-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   padding: 15px;
   width: 100%;
-  box-sizing: border-box; /* Crucial: Prevents any horizontal scrolling */
+  box-sizing: border-box;
 }
 
 img {
@@ -119,15 +155,14 @@ img {
 }
 
 .card {
-  background-color: #ffffff; /* Clean white card background to match your design */
-  border: 1px solid #e2e8f0; /* Soft light gray border line */
+  background-color: #ffffff;
+  border: 1px solid #64748b;
   border-radius: 8px;
   padding: 20px;
-  color: #1e293b; /* Dark text color for readability inside white cards */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Matches your styling aesthetic */
+  color: #1e293b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* 2. Mobile Viewport (Triggers at 320px and up) */
 @media (min-width: 320px) {
   .layout-container {
     grid-template-columns: repeat(1, 1fr);
@@ -136,7 +171,6 @@ img {
   }
 }
 
-/* 2. Tablet Viewport (Triggers at 768px and up) */
 @media (min-width: 768px) {
   .layout-container {
     grid-template-columns: repeat(2, 1fr);
@@ -145,12 +179,11 @@ img {
   }
 }
 
-/* 3. Desktop Viewport (Triggers at 1200px and up) */
 @media (min-width: 1200px) {
   .layout-container {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1100px;
-    margin: 0 auto; /* Horizontally centers your columns container */
+    margin: 0 auto;
   }
 }
 
@@ -158,6 +191,6 @@ img {
   width: 100%;
   height: 150px;
   background-color: #f0f0f0;
-  border: 2px dashed #b0b0b0;
+  border: 2px dashed #525252;
   border-radius: 8px;
 }
