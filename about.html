@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About & Contact - Corey Wells</title>
+    <title>About &amp; Contact - Corey Wells</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,15 +22,14 @@
 
     <!-- Main Content for About Page -->
     <main>
-        
         <!-- Biography Section -->
         <section id="biography">
             <h2>Biography</h2>
             <p>My name is Corey Wells. I am a student learning web development and building clean, semantic web pages. What I do best is playing the best 8-ball game, even though I lose sometimes.</p>
-
+            
             <!-- Clickable image layout linking to your local file -->
             <a href="Billiards.png" target="_blank">
-            <img src="Billiards.png" alt="Corey Wells lining up a shot on a Diamond pool table during a Tri County Texas APA match.">
+                <img src="Billiards.png" alt="Corey Wells lining up a shot on a Diamond pool table during a Tri County Texas APA match.">
             </a>
             <p><small>(Click the image above to view it full size)</small></p>
         </section>
@@ -39,7 +38,6 @@
         <section id="hobbies">
             <h2>Hobbies</h2>
             <p>When I am not coding, you can usually find me enjoying my favorite pastimes.</p>
-
             <h3>Top 3 Hobbies</h3>
             <ul>
                 <li>Billiards</li>
@@ -51,10 +49,46 @@
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Me</h2>
-            <p>If you would like to get in touch regarding my work or assignments, please reach out via email:</p>
+            <p>If you would like to get in touch regarding my work or assignments, please reach out via email or fill out the form below:</p>
             <p>Email: <a href="mailto:coreydwells2018@gmail.com">coreydwells2018@gmail.com</a></p>
-        </section>
 
+            <form id="contact-form" novalidate>
+                <fieldset>
+                    <legend>Send a Message</legend>
+
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="name-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject / Inquiry Type:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Please choose an option --</option>
+                            <option value="project">Project Inquiry</option>
+                            <option value="job">Job Opportunity</option>
+                            <option value="general">General Question</option>
+                        </select>
+                        <span class="error-message" id="subject-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <span class="error-message" id="message-error" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </fieldset>
+            </form>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -62,6 +96,36 @@
         <p>&copy; 2026 Corey Wells. Built with semantic HTML.</p>
     </footer>
 
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            const fields = [
+                { id: 'name', errorId: 'name-error', msg: 'Please enter your full name.' },
+                { id: 'email', errorId: 'email-error', msg: 'Please enter a valid email address.' },
+                { id: 'subject', errorId: 'subject-error', msg: 'Please select a subject.' },
+                { id: 'message', errorId: 'message-error', msg: 'Please enter a message.' }
+            ];
+
+            fields.forEach(function(field) {
+                const input = document.getElementById(field.id);
+                const errorSpan = document.getElementById(field.errorId);
+
+                if (!input.value.trim() || (field.id === 'email' && !input.value.includes('@'))) {
+                    errorSpan.textContent = field.msg;
+                    isValid = false;
+                } else {
+                    errorSpan.textContent = '';
+                }
+            });
+
+            if (isValid) {
+                alert('Thank you! Your message has been sent.');
+                this.reset();
+            }
+        });
+    </script>
+
 </body>
 </html>
-
