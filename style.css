@@ -2,62 +2,98 @@
    PORTFOLIO STYLING - style.css
    ========================================================================== */
 
-/* 1. TYPE SELECTOR 
+/* 1. TYPE SELECTOR
    Applies to the entire page to change fonts and default background output */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #11f06a;
-    color: #1e293b; /* Primary dark text color */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #11f06a;
+  color: #1e293b; /* Primary dark text color */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* 2. ID SELECTOR 
+/* BOX MODEL DEMONSTRATION 1 (Header element) */
+header {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-bottom: 4px solid #d97706; /* Warm Amber complementary border */
+}
+
+/* 2. ID SELECTOR
    Targets a unique header element (e.g., your name or portfolio title) */
 #main-title {
-    color: #0f172a; /* Deep midnight blue */
-    text-align: center;
-    font-size: 2.5rem;
-}
-   nav a {
-    color: #1a1a1a;
-    text-decoration: none;
-    font-weight: bold;
-}
-    /* BOX MODEL DEMONSTRATION 1 (Header element) */
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-bottom: 4px solid #d97706; /* Warm Amber complementary border */
+  color: #0f172a; /* Deep midnight blue */
+  text-align: center;
+  font-size: 2.5rem;
 }
 
-/* 3. CLASS SELECTOR 
+/* High-contrast navigation links (WCAG AA compliant against #11f06a) */
+nav a,
+li a {
+  color: #0f172a;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #000000;
+  outline: 2px solid #0f172a;
+}
+
+/* 3. CLASS SELECTOR
    A reusable container layout for content sections on index, about, or projects pages */
 .project-card {
-    background-color: #ffffff;
-    max-width: 600px;
-    
-    /* BOX MODEL DEMONSTRATION 2 & 3 (Card container layout) */
-    margin: 30px auto;          /* Top/Bottom spacing; Auto centers the box horizontally */
-    padding: 24px;              /* Internal spacing holding text away from borders */
-    border: 1px solid #e2e8f0;   /* Clean light gray border box */
-    
-    /* Intentional styling additions */
-    border-left: 5px solid #d97706; /* Secondary Complementary Amber accent line */
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  max-width: 600px;
+  /* BOX MODEL DEMONSTRATION 2 & 3 (Card container layout) */
+  margin: 30px auto;          /* Top/Bottom spacing; Auto centers the box horizontally */
+  padding: 24px;              /* Internal spacing holding text away from borders */
+  border: 1px solid #e2e8f0;   /* Clean light gray border box */
+  /* Intentional styling additions */
+  border-left: 5px solid #d97706; /* Secondary Complementary Amber accent line */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Reusable styles for images inside your portfolio cards */
 .project-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-top: 15px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 15px;
 }
-li a {   
-   color: red !important;
+
+/* Contact Form & Accessible Error Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px;
+  border: 1px solid #1e293b;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: #8b0000; /* High-contrast dark red (passes WCAG AA on green & white) */
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 4px;
 }
 
 /* ==========================================================================
@@ -73,13 +109,15 @@ li a {
   width: 100%;
   box-sizing: border-box; /* Crucial: Prevents any horizontal scrolling */
 }
+
 img {
-   max-width: 100px;
-   width: 100%;
-   height: auto;
-   display: block;
+  max-width: 100px;
+  width: 100%;
+  height: auto;
+  display: block;
   margin-inline: auto;
 }
+
 .card {
   background-color: #ffffff; /* Clean white card background to match your design */
   border: 1px solid #e2e8f0; /* Soft light gray border line */
@@ -88,7 +126,8 @@ img {
   color: #1e293b; /* Dark text color for readability inside white cards */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Matches your styling aesthetic */
 }
-/* 2. Mobile Viewport (Triggers at 768px and up) */
+
+/* 2. Mobile Viewport (Triggers at 320px and up) */
 @media (min-width: 320px) {
   .layout-container {
     grid-template-columns: repeat(1, 1fr);
@@ -114,10 +153,11 @@ img {
     margin: 0 auto; /* Horizontally centers your columns container */
   }
 }
+
 .blank-box {
-   width: 100%;
-   height: 150px;
-   background-color: #f0f0f0;
-   border: 2px dashed #b0b0b0;
-   border-radius: 8px;
+  width: 100%;
+  height: 150px;
+  background-color: #f0f0f0;
+  border: 2px dashed #b0b0b0;
+  border-radius: 8px;
 }
