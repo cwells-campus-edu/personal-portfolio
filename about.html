@@ -96,36 +96,9 @@
         <p>&copy; 2026 Corey Wells. Built with semantic HTML.</p>
     </footer>
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            let isValid = true;
+   <script> const contactForm = document.querySelector('#contact-form'); const fields = [ { id: 'name', errorId: 'name-error', msg: 'Please enter your full name.' }, { id: 'email', errorId: 'email-error', msg: 'Please enter a valid email address.' }, { id: 'subject', errorId: 'subject-error', msg: 'Please select a subject.' }, { id: 'message', errorId: 'message-error', msg: 'Please enter a message.' } ]; // Clear errors immediately when the user corrects each field fields.forEach(function(field) { const input = document.getElementById(field.id); const errorSpan = document.getElementById(field.errorId); const eventType = input.tagName === 'SELECT' ? 'change' : 'input'; input.addEventListener(eventType, function() { errorSpan.textContent = ''; input.removeAttribute('aria-invalid'); }); }); contactForm.addEventListener('submit', function(e) { e.preventDefault(); let isValid = true; fields.forEach(function(field) { const input = document.getElementById(field.id); const errorSpan = document.getElementById(field.errorId); if (!input.value.trim() || (field.id === 'email' && !input.value.includes('@'))) { errorSpan.textContent = field.msg; input.setAttribute('aria-invalid', 'true'); isValid = false; } else { errorSpan.textContent = ''; input.removeAttribute('aria-invalid'); } }); if (isValid) { this.reset(); const btn = contactForm.querySelector('button[type="submit"]'); btn.textContent = 'Message Sent!'; setTimeout(() => { btn.textContent = 'Send Message'; }, 3000); } }); </script>
 
-            const fields = [
-                { id: 'name', errorId: 'name-error', msg: 'Please enter your full name.' },
-                { id: 'email', errorId: 'email-error', msg: 'Please enter a valid email address.' },
-                { id: 'subject', errorId: 'subject-error', msg: 'Please select a subject.' },
-                { id: 'message', errorId: 'message-error', msg: 'Please enter a message.' }
-            ];
-
-            fields.forEach(function(field) {
-                const input = document.getElementById(field.id);
-                const errorSpan = document.getElementById(field.errorId);
-
-                if (!input.value.trim() || (field.id === 'email' && !input.value.includes('@'))) {
-                    errorSpan.textContent = field.msg;
-                    isValid = false;
-                } else {
-                    errorSpan.textContent = '';
-                }
-            });
-
-            if (isValid) {
-                alert('Thank you! Your message has been sent.');
-                this.reset();
-            }
-        });
-    </script>
 
 </body>
 </html>
+
